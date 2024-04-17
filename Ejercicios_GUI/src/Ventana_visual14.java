@@ -1,3 +1,7 @@
+
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -25,7 +29,32 @@ public class Ventana_visual14 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        elegirFichero = new javax.swing.JFileChooser();
+        barraDeMenus = new javax.swing.JMenuBar();
+        menuArchivo = new javax.swing.JMenu();
+        menuAbrir = new javax.swing.JMenu();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        menuSalir = new javax.swing.JMenu();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        menuArchivo.setText("File");
+
+        menuAbrir.setText("Abrir");
+        menuAbrir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuAbrirActionPerformed(evt);
+            }
+        });
+        menuArchivo.add(menuAbrir);
+        menuArchivo.add(jSeparator1);
+
+        menuSalir.setText("Salir");
+        menuArchivo.add(menuSalir);
+
+        barraDeMenus.add(menuArchivo);
+
+        setJMenuBar(barraDeMenus);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -35,11 +64,28 @@ public class Ventana_visual14 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 277, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menuAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAbrirActionPerformed
+       int resp;
+        
+resp=elegirFichero.showOpenDialog(this);
+        
+if (resp==JFileChooser.APPROVE_OPTION) {
+               JOptionPane.showMessageDialog(null,elegirFichero.getSelectedFile().toString());
+
+} else if (resp==JFileChooser.CANCEL_OPTION) {
+
+	JOptionPane.showMessageDialog(null,"Se pulsó la opción Cancelar");  
+       
+}
+
+
+    }//GEN-LAST:event_menuAbrirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,5 +123,11 @@ public class Ventana_visual14 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuBar barraDeMenus;
+    private javax.swing.JFileChooser elegirFichero;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JMenu menuAbrir;
+    private javax.swing.JMenu menuArchivo;
+    private javax.swing.JMenu menuSalir;
     // End of variables declaration//GEN-END:variables
 }
