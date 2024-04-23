@@ -1,0 +1,27 @@
+EJERCICIO
+
+Hasta ahora ha usado objetos aunque no tenga mucha conciencia de ello. Por ejemplo ha usado botones. Como ejercicio se propone lo siguiente:
+
+¿Cuál es el nombre de la clase de los botones normales que usa en sus ventanas?
+¿Cómo declararía un botón llamado btnAceptar, y otro llamado btnCancelar?
+¿Cómo construiría dichos botones?
+Indique algunos métodos para cambiar propiedades de dichos botones (métodos set)
+Indique algunos métodos para pedirle información a dichos botones (métodos get)
+Indique algún método para dar órdenes a dichos botones (algún método que no sea ni set ni get)
+
+
+Desarrollo:
+
+El nombre de la clase de los botones que se usa normalmente es "JButton"
+
+Se puede declarar usando JButton. ejemplo: una forma seria "JBoton1 = new javax.swing.JButton();"
+
+button.setText("AEAE"); Cambiarle el text
+button.setBackground(Color.RED); Cambiarle el color
+
+
+ btnAceptar.getBackground(); = obtener el color del texto
+int ancho = button.getWidth();= asignarle un ancho
+int alto = button.getHeight();= asignarle un alto
+
+button.addMouseListener(new MouseListener() = permite controlar los eventos del mouse
